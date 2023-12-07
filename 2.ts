@@ -128,6 +128,7 @@ const parseCount = (countStr: string) => countStr
     .reduce((prev, curr) => ({...prev, ...curr}), {}) as Count;
 const PARSED_COUNTS = SPLIT_COUNTS.map(c => c.map(e => parseCount(e)));
 const GAMES = _.zip(ID_ARRAY, PARSED_COUNTS).map(([id, counts]) => ({ id, counts })) as Game[];
+//GAME 1
 const PERCOLOR_CONSTRAINTS = {
     red: 12,
     green: 13,
@@ -137,4 +138,6 @@ const colorFilter = (key: Color, value: number | undefined) => Boolean(value) ? 
 const FILTERED_GAMES = GAMES.filter(g => g.counts.every(c => colorFilter('blue', c.blue) && colorFilter('red', c.red) && colorFilter('green', c.green)));
 const GAME1_ANSWER = FILTERED_GAMES.map(g => g.id).reduce((prev, acc) => prev + acc, 0);
 console.log(GAME1_ANSWER);
+//GAME 2
+ GAMES.map(a => a);
 
